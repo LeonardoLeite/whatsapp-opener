@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="whatsappOpener" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Digite o número" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4my-n7-Bxq">
+                                <rect key="frame" x="10" y="20" width="300" height="66"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="36"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhatsappBg" translatesAutoresizingMaskIntoConstraints="NO" id="Fag-MA-bIf">
+                                <rect key="frame" x="10" y="86" width="300" height="472"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXr-0G-ysv">
+                                <rect key="frame" x="81" y="106" width="158" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ZXr-0G-ysv" secondAttribute="height" multiplier="79:15" id="sTP-1D-C2a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Iniciar Conversa">
+                                    <color key="titleColor" red="0.38351458311080933" green="0.75079345703125" blue="0.3503279983997345" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="chatButtonDidTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rQb-ce-nf0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4my-n7-Bxq" secondAttribute="trailing" constant="10" id="1mn-do-aW6"/>
+                            <constraint firstItem="4my-n7-Bxq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2ex-Ho-vaU"/>
+                            <constraint firstAttribute="bottom" secondItem="Fag-MA-bIf" secondAttribute="bottom" constant="10" id="NKr-P5-7UN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fag-MA-bIf" secondAttribute="trailing" constant="10" id="QXZ-3n-PB7"/>
+                            <constraint firstItem="ZXr-0G-ysv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SZ0-Ht-heC"/>
+                            <constraint firstItem="4my-n7-Bxq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="WYg-7e-ibb"/>
+                            <constraint firstItem="Fag-MA-bIf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="YVe-ev-Vg8"/>
+                            <constraint firstItem="Fag-MA-bIf" firstAttribute="top" secondItem="4my-n7-Bxq" secondAttribute="bottom" id="hkB-n9-up3"/>
+                            <constraint firstItem="ZXr-0G-ysv" firstAttribute="top" secondItem="4my-n7-Bxq" secondAttribute="bottom" constant="20" id="xLM-I5-dtS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="phoneNumberTxtField" destination="4my-n7-Bxq" id="uy5-56-9pz"/>
+                        <outlet property="startChatButton" destination="ZXr-0G-ysv" id="JGp-lA-0w1"/>
+                        <outlet property="zapImage" destination="Fag-MA-bIf" id="zoE-gb-PK7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.25" y="128.87323943661971"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="WhatsappBg" width="300" height="472"/>
+    </resources>
+</document>

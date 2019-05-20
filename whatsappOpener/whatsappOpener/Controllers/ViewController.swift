@@ -11,10 +11,16 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var phoneNumberTxtField: UITextField!
+    @IBOutlet weak var zapImage: UIImageView!
+    @IBOutlet weak var startChatButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.startChatButton.layer.cornerRadius = 15
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(imageClicked))
+        zapImage.addGestureRecognizer(gesture)
+        self.phoneNumberTxtField.becomeFirstResponder()
     }
 
     @IBAction func chatButtonDidTouch(_ sender: UIButton) {
@@ -22,7 +28,10 @@ class ViewController: UIViewController {
         let numberUrl = "https://api.whatsapp.com/send?phone="+"55"+number
         
         print(numberUrl)
-        UIApplication.shared.openURL(URL(string: numberUrl)!)
+        UIApplication.shared.open(URL(string: numberUrl)!, options: [:])
     }
     
+    @objc func imageClicked() {
+        self.phoneNumberTxtField.resignFirstResponder()
+    }
 }

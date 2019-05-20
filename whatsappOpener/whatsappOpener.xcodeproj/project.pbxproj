@@ -76,6 +76,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A74BEBCD22930D3B00755D10 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				A7EEA514228EF4860017B1B3 /* AppDelegate.swift */,
+				A7EEA51E228EF4870017B1B3 /* Assets.xcassets */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		A74BEBCE22930D6900755D10 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A7EEA51B228EF4860017B1B3 /* whatsappOpener.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A74BEBCF22930D8800755D10 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A7EEA518228EF4860017B1B3 /* Main.storyboard */,
+				A7EEA520228EF4870017B1B3 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A74BEBD022930D8E00755D10 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A7EEA516228EF4860017B1B3 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		A7EEA508228EF4850017B1B3 = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +133,11 @@
 		A7EEA513228EF4860017B1B3 /* whatsappOpener */ = {
 			isa = PBXGroup;
 			children = (
-				A7EEA514228EF4860017B1B3 /* AppDelegate.swift */,
-				A7EEA516228EF4860017B1B3 /* ViewController.swift */,
-				A7EEA518228EF4860017B1B3 /* Main.storyboard */,
-				A7EEA51E228EF4870017B1B3 /* Assets.xcassets */,
-				A7EEA520228EF4870017B1B3 /* LaunchScreen.storyboard */,
+				A74BEBCE22930D6900755D10 /* Models */,
+				A74BEBCF22930D8800755D10 /* Views */,
+				A74BEBD022930D8E00755D10 /* Controllers */,
+				A74BEBCD22930D3B00755D10 /* SupportFiles */,
 				A7EEA523228EF4870017B1B3 /* Info.plist */,
-				A7EEA51B228EF4860017B1B3 /* whatsappOpener.xcdatamodeld */,
 			);
 			path = whatsappOpener;
 			sourceTree = "<group>";
