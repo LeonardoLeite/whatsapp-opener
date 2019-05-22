@@ -8,11 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+struct Country : Decodable {
+    let COUNTRY : String
+    let CODE : String
+    let ISO : String
+}
 
+class ViewController: UIViewController {
+    
     @IBOutlet weak var phoneNumberTxtField: UITextField!
     @IBOutlet weak var zapImage: UIImageView!
     @IBOutlet weak var startChatButton: UIButton!
+    
+    var countryCodes = [Country]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +29,8 @@ class ViewController: UIViewController {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(imageClicked))
         zapImage.addGestureRecognizer(gesture)
         self.phoneNumberTxtField.becomeFirstResponder()
+        
+        self.getDataFromJsonFile()
     }
 
     @IBAction func chatButtonDidTouch(_ sender: UIButton) {
@@ -34,4 +44,28 @@ class ViewController: UIViewController {
     @objc func imageClicked() {
         self.phoneNumberTxtField.resignFirstResponder()
     }
+    
+    func getDataFromJsonFile()
+    {
+        let paths = Bundle.main.path(forResource: "countries", ofType: "json")!
+        let datas = try! Data(contentsOf: URL(fileURLWithPath: paths), options: Data.ReadingOptions.mappedIfSafe)
+        
+        do {
+            let decoder = JSONDecoder()
+            self.countryCodes = try decoder.decode([Country].self, from: datas)
+            print(countryCodes)
+        } catch let error{
+            print("Erro", error)
+        }
+    }
+    
+    /*
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 0
+    }
+ */
 }
